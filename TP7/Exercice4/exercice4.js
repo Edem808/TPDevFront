@@ -38,16 +38,10 @@ window.onload = function () {
         ctxAnim.translate(150, 150);
         ctxAnim.rotate(angleRotation);
 
-        // Dessiner la fleur (centrée en 0,0 car on a déjà translate)
-        // Note: dessinerFleur attend des coordonnées absolues, mais ici
-        // on triche un peu ou on adapte la fonction.
-        // Option simple : appeler dessinerFleur à l'origine (0,0)
         dessinerFleur(ctxAnim, 0, 0, 8);
 
-        // Restaurer le contexte
         ctxAnim.restore();
 
-        // Incrémenter l'angle
         angleRotation += 0.02;
 
         requestAnimationFrame(animer);

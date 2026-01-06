@@ -4,25 +4,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exercice 3 : Rectangle Interactif</title>
-    <link rel="stylesheet" href="exercice3.css">
+    <link rel="stylesheet" href="exercice1.CSS">
     <link rel="stylesheet" href="../../synthesis.css" />
+    <title>Exo 1 animation CSS</title>
 </head>
 
 <body>
+    <h1>Effet de survol CSS</h1>
+    <div class="zone-centre">
+        <div class="contenaire" id="rideau">
+            <img src="images/pont.JPG" alt="Image cachée d'un pont" />
 
-    <h1>Exercice 3 : Rectangle Interactif</h1>
+            <!-- rideau composé de deux panneaux -->
+            <div class="rideau" aria-hidden="true">
+                <div class="rid left"></div>
+                <div class="rid right"></div>
+            </div>
 
-    <div class="conteneur-principal">
-        <canvas id="monCanvas" width="300" height="300"
-            style="border:1px solid #000000; background-color: black;"></canvas>
 
-        <div class="panneau-controles">
-            <button id="btnLargeur">Largeur</button>
-            <button id="btnHauteur">Hauteur</button>
-            <button id="btnCouleur">Couleur</button>
-            <button id="btnStyle">Style</button>
-            <button id="btnVisib">Visibilité</button>
         </div>
     </div>
 
@@ -35,12 +34,12 @@
                     <div class="item-synthese pleine-largeur">
                         <h3>Connaissances mises en jeu</h3>
                         <div>
-                            <span class="etiquette-concept">Canvas API</span>
-                            <span class="etiquette-concept">JavaScript Events</span>
-                            <span class="etiquette-concept">Dessin canvas</span>
+                            <span class="etiquette-concept">CSS Hover</span>
+                            <span class="etiquette-concept">Transforms</span>
+                            <span class="etiquette-concept">Transitions</span>
                         </div>
-                        <p>Manipulation d'un élément <code>canvas</code> via JavaScript pour dessiner et modifier
-                            dynamiquement des formes (rectangles) suite à des interactions utilisateur (clics).</p>
+                        <p>Création d'un effet de rideau s'ouvrant au survol de la souris, révélant une image en
+                            arrière-plan.</p>
                     </div>
 
                     <div class="item-synthese">
@@ -57,23 +56,20 @@
 
                     <div class="item-synthese">
                         <h3>Intérêt pour l'apprentissage</h3>
-                        <p>Introduction fondamentale à la manipulation graphique 2D dans le navigateur. Je ne suis pas
-                            trop fan des canvas mais j'ai essayer de les utiliser pour comprendre comment ils
-                            fonctionnent et comment on peut les utiliser pour des applications interactives ce qui c'est
-                            averer tres interessant.</p>
+                        <p>Compréhension des pseudo-classes et de la manipulation des transformations CSS pour des
+                            effets visuels simples.</p>
                     </div>
 
                     <div class="item-synthese pleine-largeur">
                         <h3>Qualité du résultat</h3>
-                        <p>Application Web interactive simple et fonctionnelle comme a la demande du TP.</p>
+                        <p>Effet fluide et fonctionnel.</p>
                     </div>
                 </div>
             </div>
         </details>
     </div>
-
     <script src="../../navigation.js"></script>
-    <script src="script.js"></script>
+    <script src="exercice1.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,138 @@
+/* synthese.css - Composant de Synthèse Réutilisable */
+
+.conteneur-synthese {
+    margin: 40px auto;
+    max-width: 800px;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    color: #333;
+}
+
+.details-synthese {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.details-synthese[open] {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.resume-synthese {
+    background: linear-gradient(135deg, #6e8efb, #a777e3);
+    color: white;
+    padding: 15px 25px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.1em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    user-select: none;
+    transition: background 0.3s;
+    list-style: none;
+    /* Cache le triangle par défaut */
+}
+
+/* Indicateur personnalisé pour le résumé */
+.resume-synthese::after {
+    content: '+';
+    font-size: 1.5em;
+    font-weight: 300;
+    transition: transform 0.3s ease;
+}
+
+.details-synthese[open] .resume-synthese::after {
+    transform: rotate(45deg);
+}
+
+.resume-synthese::-webkit-details-marker {
+    display: none;
+}
+
+.contenu-synthese {
+    padding: 25px;
+    animation: glissementBas 0.4s ease-out forwards;
+    transform-origin: top;
+}
+
+@keyframes glissementBas {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.grille-synthese {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+@media (min-width: 600px) {
+    .grille-synthese {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .item-synthese.pleine-largeur {
+        grid-column: span 2;
+    }
+}
+
+.item-synthese h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #4a4a4a;
+    font-size: 0.95em;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid #efefef;
+    padding-bottom: 5px;
+    display: inline-block;
+}
+
+.item-synthese p {
+    margin: 0;
+    line-height: 1.6;
+    color: #555;
+    font-size: 0.95em;
+}
+
+.indicateur-difficulte {
+    display: flex;
+    gap: 5px;
+    margin-top: 5px;
+}
+
+.point-difficulte {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #ddd;
+    transition: background-color 0.3s;
+}
+
+.point-difficulte.actif {
+    background-color: #a777e3;
+}
+
+/* Style minimaliste pour les étiquettes de concepts */
+.etiquette-concept {
+    display: inline-block;
+    background: #f0f2f5;
+    padding: 4px 10px;
+    border-radius: 15px;
+    font-size: 0.85em;
+    color: #444;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    border: 1px solid #e1e4e8;
+}

@@ -1,37 +1,88 @@
 <!DOCTYPE html>
 <html lang="fr">
-	<head>
-		<title>Un compteur de secondes en Javascript</title>
-		<meta charset="utf-8" />
-		<link rel="stylesheet" href="chrono.css" />
-		<script src="chrono.js"></script>
-	</head>
-	<body>
-		<div id="conteneur">
-			<div id="chrono1">
-				En utilisant <pre>setTimeout</pre><br />
-				<div class="affichage">0</div>
-				<div id="boutons">
-					<button id="start1">Start</button>
-					<button id="stop1">Stop</button>
-				</div>
-			</div>
-			<div id="chrono2">
-				En utilisant <pre>requestAnimationFrame</pre><br />
-				<div class="affichage">0</div>
-				<div id="boutons">
-					<button id="start2">Start</button>
-					<button id="stop2">Stop</button>
-				</div>
-			</div>
-		</div>
-		<div id="chrono3">
-			En faisant attention de ne lancer qu'une fois <pre>requestAnimationFrame</pre><br />
+
+<head>
+	<title>Un compteur de secondes en Javascript</title>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" href="chrono.css" />
+	<link rel="stylesheet" href="../../synthesis.css" />
+	<script src="chrono.js"></script>
+</head>
+
+<body>
+	<div id="conteneur">
+		<div id="chrono1">
+			En utilisant
+			<pre>setTimeout</pre><br />
 			<div class="affichage">0</div>
 			<div id="boutons">
-				<button id="start3">Start</button>
-				<button id="stop3">Stop</button>
+				<button id="start1">Start</button>
+				<button id="stop1">Stop</button>
 			</div>
 		</div>
-	</body>
+		<div id="chrono2">
+			En utilisant
+			<pre>requestAnimationFrame</pre><br />
+			<div class="affichage">0</div>
+			<div id="boutons">
+				<button id="start2">Start</button>
+				<button id="stop2">Stop</button>
+			</div>
+		</div>
+	</div>
+	<div id="chrono3">
+		En faisant attention de ne lancer qu'une fois
+		<pre>requestAnimationFrame</pre><br />
+		<div class="affichage">0</div>
+		<div id="boutons">
+			<button id="start3">Start</button>
+			<button id="stop3">Stop</button>
+		</div>
+	</div>
+
+	<!-- Synthesis Section -->
+	<div class="conteneur-synthese">
+		<details class="details-synthese">
+			<summary class="resume-synthese">Synthèse & Auto-évaluation</summary>
+			<div class="contenu-synthese">
+				<div class="grille-synthese">
+					<div class="item-synthese pleine-largeur">
+						<h3>Connaissances mises en jeu</h3>
+						<div>
+							<span class="etiquette-concept">JavaScript Timing Events</span>
+							<span class="etiquette-concept">setTimeout vs requestAnimationFrame</span>
+							<span class="etiquette-concept">DOM Manipulation</span>
+						</div>
+						<p>Comparaison de différentes méthodes pour créer un chronomètre en JS : <code>setTimeout</code>
+							versus <code>requestAnimationFrame</code>, et gestion de l'état (start/stop).</p>
+					</div>
+
+					<div class="item-synthese">
+						<h3>Difficulté estimée</h3>
+						<div class="indicateur-difficulte">
+							<span class="point-difficulte actif"></span>
+							<span class="point-difficulte actif"></span>
+							<span class="point-difficulte actif"></span>
+							<span class="point-difficulte"></span>
+							<span class="point-difficulte"></span>
+						</div>
+						<p>Niveau : Intermédiaire</p>
+					</div>
+
+					<div class="item-synthese">
+						<h3>Intérêt pour l'apprentissage</h3>
+						<p>Fondamental pour comprendre la boucle d'animation et les problèmes de performance/précision.
+						</p>
+					</div>
+
+					<div class="item-synthese pleine-largeur">
+						<h3>Qualité du résultat</h3>
+						<p>Démonstration interactive claire des différences entre les méthodes.</p>
+					</div>
+				</div>
+			</div>
+		</details>
+	</div>
+</body>
+
 </html>

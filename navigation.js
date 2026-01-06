@@ -12,8 +12,8 @@
         {
             titre: "TP 1",
             exercices: [
-                { titre: "Exercice 1", lien: "TP1/TP1-Exercice1/exo1.html" },
-                { titre: "Exercice 2", lien: "TP1/TP1-Exercice2-Documents/exercice2.html" }
+                { titre: "Exercice 1", lien: "TP1/Exercice1/exo1.html" },
+                { titre: "Exercice 2", lien: "TP1/Exercice2/exercice2.html" }
             ]
         },
         {
@@ -28,22 +28,22 @@
         {
             titre: "TP 3",
             exercices: [
-                { titre: "Exercice 1", lien: "TP3/TP3-Exercice1/exercice1.html" },
-                { titre: "Exercice 2", lien: "TP3/TP3-Exercice2/exercice2.html" }
+                { titre: "Exercice 1", lien: "TP3/Exercice1/exercice1.html" },
+                { titre: "Exercice 2", lien: "TP3/Exercice2/exercice2.html" }
             ]
         },
         {
             titre: "TP 4",
             exercices: [
-                { titre: "Exercice 1", lien: "TP4/TP4-Exercice1/exercice1.html" },
-                { titre: "Exercice 2", lien: "TP4/TP4-Exercice2/exercice2.html" }
+                { titre: "Exercice 1", lien: "TP4/Exercice1/exercice1.html" },
+                { titre: "Exercice 2", lien: "TP4/Exercice2/exercice2.html" }
             ]
         },
         {
             titre: "TP 5",
             exercices: [
                 { titre: "Exercice 1", lien: "TP5/Exercice1/exercice1.html" },
-                { titre: "Exercice 2", lien: "TP5/Exercice2/exercie2tp5.html" },
+                { titre: "Exercice 2", lien: "TP5/Exercice2/exercice2.html" },
                 { titre: "Exercice 5 (Sticky)", lien: "TP5/Exercice5/exercice5.html" },
                 { titre: "Exercice 6 (Imposé)", lien: "TP5/Exercice6/index.html" }
             ]
@@ -51,9 +51,9 @@
         {
             titre: "TP 6",
             exercices: [
-                { titre: "Exercice 1", lien: "TP6/Exo1/exo1.html" },
-                { titre: "Exercice 2", lien: "TP6/Exo2/exo2.html" },
-                { titre: "Exercice 3", lien: "TP6/Exo3/exo3.html" },
+                { titre: "Exercice 1", lien: "TP6/Exercice1/exercice1.html" },
+                { titre: "Exercice 2", lien: "TP6/Exercice2/exercice2.html" },
+                { titre: "Exercice 3", lien: "TP6/Exercice3/exercice3.html" },
                 { titre: "Exercice 5 (Bannière)", lien: "TP6/Exercice5/exercice5.html" }
             ]
         },
@@ -73,7 +73,6 @@
         }
     ];
 
-    // 2. Styles CSS enrichis pour le menu imbriqué
     const styles = `
         .conteneur-nav-flottant {
             position: fixed;
@@ -261,10 +260,6 @@
     liTPs.appendChild(sousMenuTPs);
     menuPrincipal.appendChild(liTPs);
 
-    // Lien Retour
-    const liRetour = document.createElement('li');
-    liRetour.innerHTML = `<a href="#" onclick="window.history.back(); return false;" class="menu-lien">Retour</a>`;
-    menuPrincipal.appendChild(liRetour);
 
     conteneur.appendChild(menuPrincipal);
     conteneur.appendChild(bouton);

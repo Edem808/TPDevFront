@@ -1,0 +1,102 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+h1 {
+  text-align: center;
+}
+
+
+.zone-centre {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px;
+  background: #ffffff
+}
+
+.contenaire {
+  width: 720px;
+  max-width: 95vw;
+  aspect-ratio: 16/9;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 8px 30px rgba(2, 6, 23, 0.12);
+  cursor: pointer;
+  background: linear-gradient(180deg, #ddd, #eee);
+}
+
+/* l'image derrière */
+.contenaire img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  user-select: none;
+}
+
+/* overlay opaque (le rideau). composé de 2 panneaux gauche/droite */
+.rideau {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  /* pointer-events:none permet de passer la souris au parent */
+  display: block;
+}
+
+.rid {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50%;
+  background: #ff0000;
+  /* changez la couleur / opacité ici */
+  opacity: 1;
+  transition: transform 700ms cubic-bezier(.2, .9, .3, 1);
+  /* fallback CSS */
+  will-change: transform;
+}
+
+.rid.left {
+  left: 0;
+  transform: translateX(0);
+}
+
+.rid.right {
+  right: 0;
+  left: auto;
+  transform: translateX(0);
+}
+
+.contenaire:hover .rid.left {
+  transform: translateX(-110%);
+}
+
+/* va vers la gauche */
+.contenaire:hover .rid.right {
+  transform: translateX(110%);
+}
+
+/* va vers la droite */
+
+
+/* état ouvert (utilisé par JS) */
+.open .rid {
+  transition: none
+}
+
+/* JS anime via requestAnimationFrame, désactive transition pour éviter conflits */
+
+/* responsive */
+@media (max-width:520px) {
+  .contenaire {
+    width: 95vw;
+    aspect-ratio: 4/3
+  }
+}
