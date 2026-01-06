@@ -1,0 +1,112 @@
+body {
+    margin: 20px;
+    background-color: #f0f0f0;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* --- CONTENEUR PRINCIPAL --- */
+.banner {
+    width: 728px;
+    height: 90px;
+    background-color: #000000;
+    color: white;
+    position: relative;
+    display: flex;
+    align-items: center;
+    /* Centre verticalement */
+    padding-left: 30px;
+    /* Marge à gauche */
+    border-radius: 10px;
+}
+
+/* --- LOGO --- */
+.logo img {
+    width: 40px;
+    /* Taille fixe */
+    margin-right: 20px;
+    filter: invert(100%);
+}
+
+/* --- TEXTE --- */
+.text-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.titre {
+    font-size: 24px;
+    font-weight: bold;
+    opacity: 0;
+    /* Caché au début */
+    /* Animation CSS [cite: 67] */
+    animation: glissementBas 0.8s ease-out forwards;
+    animation-delay: 0.2s;
+    /* Attend 0.2s avant de commencer */
+}
+
+.sous-titre {
+    font-size: 14px;
+    color: #a1a1a6;
+    /* Gris clair */
+    opacity: 0;
+    /* Caché au début */
+    animation: glissementHaut 0.8s ease-out forwards;
+    animation-delay: 0.5s;
+}
+
+/* --- IMAGE PRODUIT --- */
+.product-img {
+    position: absolute;
+    /* Placement libre */
+    right: 50px;
+    /* Calé à droite */
+    top: 5px;
+    height: 80px;
+    /* Hauteur max (doit être < 90px) */
+    /* Garde les proportions */
+    opacity: 0;
+    /* Animation qui vient de la droite */
+    animation: arriveeDroite 1s ease-out forwards;
+    animation-delay: 0.8s;
+}
+
+/* --- DÉFINITION DES ANIMATIONS (KEYFRAMES) --- */
+
+/* Apparition du titre */
+@keyframes glissementBas {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Apparition du sous-titre */
+@keyframes glissementHaut {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Apparition de l'image */
+@keyframes arriveeDroite {
+    from {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}

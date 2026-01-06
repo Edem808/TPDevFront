@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice 6 - Effet Parallaxe</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="content-section">
+        <h2>1. Le Concept de Parallaxe</h2>
+        <p>
+            L'effet de parallaxe est une technique de web design où l'arrière-plan se déplace à une vitesse différente
+            de celle du contenu de premier plan lors du défilement. Cela crée une illusion de profondeur et d'immersion
+            (2D vers 3D).
+        </p>
+        <p>
+            Dans cet exercice, nous utilisons une méthode purement CSS , sans JavaScript. L'astuce repose sur la gestion
+            de l'arrière-plan par rapport à la zone d'affichage, le <strong>viewport</strong>, notion centrale abordée
+            dans le <em>Cours 2</em> sur le Responsive Web Design.
+        </p>
+    </div>
+
+    <div class="parallax image1"></div>
+
+    <div class="content-section">
+        <h2>2. La Propriété Magique : background-attachment</h2>
+        <p>
+            La clé de cet effet réside dans la propriété CSS <code>background-attachment: fixed;</code>.
+        </p>
+        <p>
+            Normalement, une image de fond défile avec son élément parent (comportement par défaut <code>scroll</code>).
+            En la passant à <code>fixed</code>, l'image est "détachée" du flux du document et fixée par rapport à la
+            fenêtre du navigateur (le viewport).
+        </p>
+        <p>
+            Ainsi, lorsque vous faites défiler cette page, le bloc <code>div</code> (qui contient l'image) remonte
+            normalement, agissant comme une "fenêtre" qui glisse par-dessus l'image fixe. C'est ce décalage de mouvement
+            qui trompe l'œil.
+        </p>
+    </div>
+
+    <div class="parallax image2"></div>
+
+    <div class="content-section">
+        <h2>3. Dimensionnement et Unités</h2>
+        <p>
+            Pour que l'effet soit visible, il faut que l'image couvre suffisamment d'espace. Nous utilisons ici les
+            unités relatives au viewport vues dans le <em>Cours 2</em> :
+        </p>
+        <p>
+            <code>min-height: 100vh;</code> assure que chaque section image prend au moins 100% de la hauteur visible de
+            l'écran.
+        </p>
+        <p>
+            Enfin, la propriété <code>background-size: cover;</code> (également citée dans le <em>Cours 2</em> pour les
+            "images flexibles") garantit que l'image remplit toujours tout l'espace disponible sans être déformée,
+            quelle que soit la taille de l'écran.
+        </p>
+    </div>
+
+    <div class="parallax image3"></div>
+    <script src="../../navigation.js"></script>
+</body>
+
+</html>

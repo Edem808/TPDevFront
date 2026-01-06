@@ -1,0 +1,40 @@
+body {
+	height: 100%;
+	margin: 0;
+	font-family: sans-serif;
+	line-height: 2;
+}
+
+.parallax {
+	min-height: 100vh;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+}
+
+.image1 {
+	background-image: url('img1.png');
+}
+
+.image2 {
+	background-image: url('img2.jpg');
+}
+
+.image3 {
+	background-image: url('img3.png');
+}
+
+.content-section {
+	padding: 50px;
+	background-color: #ffffff;
+}
+
+.content-section h2 {
+	text-align: center;
+}
+
+.content-section p {
+	max-width: 800px;
+	margin: 0 auto;
+	margin-bottom: 15px;
+}

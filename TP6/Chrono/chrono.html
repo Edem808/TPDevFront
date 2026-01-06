@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<title>Un compteur de secondes en Javascript</title>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" href="chrono.css" />
+		<script src="chrono.js"></script>
+	</head>
+	<body>
+		<div id="conteneur">
+			<div id="chrono1">
+				En utilisant <pre>setTimeout</pre><br />
+				<div class="affichage">0</div>
+				<div id="boutons">
+					<button id="start1">Start</button>
+					<button id="stop1">Stop</button>
+				</div>
+			</div>
+			<div id="chrono2">
+				En utilisant <pre>requestAnimationFrame</pre><br />
+				<div class="affichage">0</div>
+				<div id="boutons">
+					<button id="start2">Start</button>
+					<button id="stop2">Stop</button>
+				</div>
+			</div>
+		</div>
+		<div id="chrono3">
+			En faisant attention de ne lancer qu'une fois <pre>requestAnimationFrame</pre><br />
+			<div class="affichage">0</div>
+			<div id="boutons">
+				<button id="start3">Start</button>
+				<button id="stop3">Stop</button>
+			</div>
+		</div>
+	</body>
+</html>

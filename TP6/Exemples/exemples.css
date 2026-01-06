@@ -1,0 +1,55 @@
+body {
+	margin : 0;
+}
+
+h1 {
+	text-align : center;
+	color: olive;
+}
+
+#defilement {
+	font-size : 2rem;
+	transform : translatex(-400px);
+	width : 400px;
+	color : navy;
+}
+
+#grossissement {
+	transform : scale(0);
+	width : 400px;
+	margin-left : auto;
+	margin-right : auto;
+	margin-bottom : 30px;
+	text-align : center;
+	color : magenta;
+}
+
+#rotation {
+	font-size : 2rem;
+	width : 400px;
+	margin-left : auto;
+	margin-right : auto;
+	margin-bottom : 30px;
+	text-align : center;
+	color : pink;
+}
+
+#complexe {
+	width : 400px;
+	transform : scale(0);
+	text-align : center;
+	margin-left : auto;
+	margin-right : auto;
+	color : darkseagreen;
+}
+
+.boutons {
+	text-align : center;
+	padding-bottom : 30px;
+	margin-top : 20px;
+	border-bottom : solid 3px orange;
+}
+
+button {
+	width : 100px;
+}

@@ -1,0 +1,65 @@
+body {
+    background-color: #333333;
+    margin: 0;
+}
+
+main {
+    background-color: white;
+    width: 90vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header {
+    display: flex;
+    background-color: #CC0033;
+    color: white;
+}
+
+h1 {
+    text-align: center;
+    margin: 0;
+}
+
+h2 {
+    text-align: center;
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+.gauche {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.droite {
+    width: 60%;
+}
+
+.droite div {
+    border : dashed 2px white;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 10px;
+}
+
+#deux {
+    display: inline-block;
+}
+
+table {
+    border-collapse: collapse;
+    width: calc(100% - 20px);
+    margin: 10px;
+}
+
+td {
+    border : solid 1px black;
+    text-align: center;
+}
+
+th {
+    border : solid 1px black;
+}

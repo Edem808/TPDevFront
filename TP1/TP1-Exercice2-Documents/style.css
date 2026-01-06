@@ -1,0 +1,150 @@
+/* --- Configuration globale et Body --- */
+body {
+    background-color: #eee; /* [cite: 64] */
+    margin: 0;
+    padding: 0;
+    font-family: Georgia, "Times New Roman", Times, serif; /* Police avec empattements comme sur l'exemple */
+    color: #333;
+}
+
+/* Liens par défaut */
+a:link { color: #633; text-decoration: none; } /* [cite: 66] */
+a:visited { color: #966; } /* [cite: 67] */
+a:hover { text-decoration: underline; }
+
+/* --- Conteneur Principal --- */
+#page {
+    background-color: #fff; /* [cite: 65] */
+    width: 960px; /* Largeur standard pour ce type de maquette */
+    margin: 0 auto; /* Centrer la page */
+    box-shadow: 0 0 10px rgba(0,0,0,0.2); /* Petit effet d'ombre pour le style "papier" */
+}
+
+/* --- Header --- */
+header {
+    background-color: #966; /* [cite: 70] */
+    /* L'image header.gif crée la courbe et le logo en haut à gauche */
+    background-image: url('header.gif'); 
+    background-repeat: no-repeat;
+    background-position: left top;
+    height: 180px; /* Ajusté pour laisser voir l'image de fond */
+    color: white;
+    padding: 0 40px;
+    
+    /* Positionnement du contenu du header */
+    display: flex;
+    justify-content: space-between; /* Texte à gauche, liens à droite */
+    align-items: flex-start;
+    padding-top: 20px;
+}
+
+header p {
+    font-size: 1.5em;
+    margin-left: 120px; /* Décalage pour ne pas chevaucher le logo graphique */
+    margin-top: 10px;
+}
+
+header ul {
+    list-style-type: none;
+    display: flex;
+    gap: 15px;
+}
+
+header ul li a {
+    color: white !important; /* Force la couleur blanche sur le fond sombre */
+    text-transform: uppercase;
+}
+
+header ul li a:hover {
+    color: #300 !important; /* [cite: 71, 75] */
+}
+
+/* --- Mise en page du contenu (Flexbox) --- */
+#content {
+    display: flex;
+    /* L'HTML a <section> puis <aside>. 
+       L'image cible montre l'aside à GAUCHE et la section à DROITE.
+       row-reverse inverse l'ordre d'affichage.
+    */
+    flex-direction: row-reverse; 
+    padding: 40px;
+    align-items: flex-start; /* Aligne les colonnes en haut */
+}
+
+/* Colonne Principale (Droite) */
+section {
+    flex: 3; /* Prend environ 75% de la place */
+    padding-left: 40px;
+    border-left: 1px solid #ddd; /* Séparateur vertical fin */
+}
+
+section img {
+    float: left; /* L'image flotte à gauche du texte */
+    margin-right: 20px;
+    margin-bottom: 10px;
+    border: 5px solid #fff;
+    box-shadow: 1px 1px 5px #ccc;
+}
+
+/* Colonne Secondaire "Aside" (Gauche) */
+aside {
+    flex: 1; /* Prend environ 25% de la place */
+    padding-right: 20px;
+    font-size: 0.9em;
+    text-align: left;
+}
+
+/* --- Typographie --- */
+h1 {
+    color: #633; /* [cite: 68] */
+    text-align: center;
+    font-size: 2em;
+    margin-top: 0;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 20px;
+}
+
+h2 {
+    color: #999; /* [cite: 69] */
+    text-transform: uppercase;
+    font-size: 1.1em;
+    letter-spacing: 1px;
+    margin-top: 30px;
+}
+
+/* Ajout de l'ornement spécifique derrière le premier h2 ou les h2 en général */
+section h2:first-of-type + p {
+    /* Ciblage spécifique pour l'ornement si nécessaire, 
+       mais ici on peut le mettre sur le h2 s'il a de la place */
+}
+/* Ou application sur le h2 directement comme suggéré par l'image */
+section h2 {
+    background: url('h2_ornament.gif') no-repeat left center;
+    min-height: 40px;
+    padding-top: 10px; /* Ajustement selon l'image */
+    margin-bottom: 10px;
+}
+
+h3 {
+    color: #633; /* [cite: 68] */
+    text-transform: uppercase;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+/* --- Footer --- */
+footer {
+    background-color: #333; /* [cite: 73] */
+    background-image: url('footer.gif');
+    background-repeat: no-repeat;
+    background-position: right bottom; /* La courbe est en bas à droite */
+    color: #fff;
+    height: 120px;
+    display: flex;
+    align-items: flex-end; /* Texte en bas */
+    padding: 20px 40px;
+}
+
+footer a:link, footer a:visited {
+    color: #c99; /* [cite: 74, 77] */
+}

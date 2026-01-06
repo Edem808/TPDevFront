@@ -1,0 +1,159 @@
+:root {
+    /* Palette de couleurs (Inspiré par Dieter Rams / Braun) */
+    --couleur-arriere-plan: #f4f4f4;
+    /* Blanc cassé pour moins de fatigue oculaire */
+    --couleur-texte: #222222;
+    /* Gris très sombre, presque noir */
+    --couleur-accent: #ff4400;
+    /* Orange Braun classique */
+    --couleur-carte: #ffffff;
+    --couleur-bordure: #e0e0e0;
+
+    /* Espacement et Typographie */
+    --espacement-base: 1.5rem;
+    --police-principale: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    --taille-police: 16px;
+    --rayon-bordure: 0px;
+    /* Pas de coins arrondis (Fonctionnel) */
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--couleur-arriere-plan);
+    color: var(--couleur-texte);
+    font-family: var(--police-principale);
+    font-size: var(--taille-police);
+    line-height: 1.6;
+    padding: var(--espacement-base);
+}
+
+header {
+    margin-bottom: calc(var(--espacement-base) * 3);
+    padding-bottom: var(--espacement-base);
+    border-bottom: 2px solid var(--couleur-texte);
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+h1 {
+    font-weight: 700;
+    letter-spacing: -0.05em;
+    font-size: 2.5rem;
+}
+
+.sous-titre {
+    font-weight: 400;
+    color: #666;
+}
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.intro {
+    margin-bottom: calc(var(--espacement-base) * 3);
+    max-width: 800px;
+}
+
+.intro p {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+/* Grille des TPs */
+.grille-tps {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--espacement-base);
+}
+
+/* Composant Carte */
+.carte {
+    background-color: var(--couleur-carte);
+    border: 1px solid var(--couleur-bordure);
+    padding: var(--espacement-base);
+    transition: all 0.2s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.carte:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    border-color: var(--couleur-texte);
+}
+
+.carte h2 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--couleur-bordure);
+    padding-bottom: 0.5rem;
+}
+
+.liste-exercices {
+    list-style: none;
+    margin-top: auto;
+    /* Pousse la liste vers le bas si la carte est grande */
+}
+
+.liste-exercices li {
+    margin-bottom: 0.5rem;
+    border-bottom: 1px dotted var(--couleur-bordure);
+}
+
+.liste-exercices li:last-child {
+    border-bottom: none;
+}
+
+.lien-exercice {
+    text-decoration: none;
+    color: var(--couleur-texte);
+    display: block;
+    padding: 0.25rem 0;
+    transition: color 0.2s;
+    font-size: 0.95rem;
+}
+
+.lien-exercice:hover {
+    color: var(--couleur-accent);
+    padding-left: 5px;
+}
+
+footer {
+    margin-top: calc(var(--espacement-base) * 4);
+    padding-top: var(--espacement-base);
+    text-align: center;
+    padding: 40px;
+    color: #888;
+    font-size: 0.9em;
+    border-top: 1px solid #eee;
+    margin-top: 60px;
+}
+
+/* Utilitaires */
+.badge {
+    display: inline-block;
+    font-size: 0.75rem;
+    padding: 2px 6px;
+    background: #eee;
+    margin-left: 8px;
+    vertical-align: middle;
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+    }
+
+    .grille-tps {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>TP7 - Exercice 1</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+        .canvas-container {
+            text-align: center;
+            background: white;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        canvas {
+            border: 1px solid #ccc;
+        }
+        h3 { margin-top: 0; }
+    </style>
+</head>
+<body>
+
+    <div class="canvas-container">
+        <h3>(a) Cible</h3>
+        <canvas id="canvasA" width="400" height="400"></canvas>
+    </div>
+
+    <div class="canvas-container">
+        <h3>(b) Poule</h3>
+        <canvas id="canvasB" width="400" height="400"></canvas>
+    </div>
+
+    <div class="canvas-container">
+        <h3>(c) Damier</h3>
+        <canvas id="canvasC" width="400" height="400"></canvas>
+    </div>
+
+    <div class="canvas-container">
+        <h3>(d) Pac-Man</h3>
+        <canvas id="canvasD" width="200" height="200"></canvas>
+    </div>
+
+    <script>
+        // --- FIGURE A : LA CIBLE ---
+        const canvasA = document.getElementById('canvasA');
+        const ctxA = canvasA.getContext('2d');
+        
+        function drawTarget() {
+            const centerX = canvasA.width / 2;
+            const centerY = canvasA.height / 2;
+            // Rayons décroissants pour empiler les cercles
+            const radii = [100, 80, 60, 40, 20];
+            const colors = ['black', 'white', 'black', 'white', 'black'];
+
+            // Dessin des anneaux concentriques
+            for (let i = 0; i < radii.length; i++) {
+                ctxA.beginPath(); // [cite: 3168]
+                ctxA.arc(centerX, centerY, radii[i], 0, 2 * Math.PI); // [cite: 3141]
+                ctxA.fillStyle = colors[i]; // [cite: 2999]
+                ctxA.fill(); // [cite: 2993]
+            }
+
+            // Le centre rouge
+            ctxA.beginPath();
+            ctxA.arc(centerX, centerY, 10, 0, 2 * Math.PI);
+            ctxA.fillStyle = 'red';
+            ctxA.fill();
+        }
+        drawTarget();
+
+        // --- FIGURE B : LA POULE ---
+        const canvasB = document.getElementById('canvasB');
+        const ctxB = canvasB.getContext('2d');
+
+        function drawChicken() {
+            // Dessin de la grille (optionnel, pour ressembler à l'image source)
+            ctxB.strokeStyle = '#e0e0e0';
+            ctxB.lineWidth = 1;
+            for(let i=0; i<=200; i+=20) {
+                ctxB.beginPath(); ctxB.moveTo(i,0); ctxB.lineTo(i,200); ctxB.stroke();
+                ctxB.beginPath(); ctxB.moveTo(0,i); ctxB.lineTo(200,i); ctxB.stroke();
+            }
+
+            // Paramètres de la poule
+            const u = 20; // unité de la grille (20px)
+            ctxB.strokeStyle = 'black'; // [cite: 3000]
+            ctxB.lineWidth = 2; // [cite: 2991]
+            ctxB.lineJoin = 'round';
+
+            ctxB.beginPath(); // 
+            // On trace point par point selon la grille visuelle du PDF
+            ctxB.moveTo(2*u, 3*u); // Pointe du bec
+            ctxB.lineTo(3*u, 3*u);
+            ctxB.lineTo(3*u, 2*u); // Tête
+            // La crête (forme en zigzag)
+            ctxB.lineTo(3.3*u, 1.7*u);
+            ctxB.lineTo(3.6*u, 2*u);
+            ctxB.lineTo(4*u, 2*u);
+            
+            ctxB.lineTo(6*u, 2*u); // Dos
+            ctxB.lineTo(7*u, 1*u); // Queue haut
+            ctxB.lineTo(7*u, 2*u); // Queue milieu
+            ctxB.lineTo(8*u, 2*u); // Queue pointe
+            ctxB.lineTo(7*u, 3*u); // Queue bas
+            ctxB.lineTo(6*u, 4*u); // Bas du dos
+            ctxB.lineTo(4*u, 4*u); // Ventre
+            ctxB.lineTo(3*u, 3*u); // Cou
+            ctxB.lineTo(2*u, 3*u); // Retour au bec
+            ctxB.stroke(); // [cite: 3074]
+
+            // Les pattes
+            ctxB.beginPath();
+            // Patte 1
+            ctxB.moveTo(4*u, 4*u); ctxB.lineTo(4*u, 5*u);
+            ctxB.moveTo(4*u, 5*u); ctxB.lineTo(3.7*u, 5.2*u); // Orteil
+            ctxB.moveTo(4*u, 5*u); ctxB.lineTo(4.3*u, 5.2*u); // Orteil
+            // Patte 2
+            ctxB.moveTo(5.5*u, 4*u); ctxB.lineTo(5.5*u, 5*u);
+            ctxB.moveTo(5.5*u, 5*u); ctxB.lineTo(5.2*u, 5.2*u);
+            ctxB.moveTo(5.5*u, 5*u); ctxB.lineTo(5.8*u, 5.2*u);
+            ctxB.stroke();
+
+            // L'œil
+            ctxB.beginPath();
+            ctxB.arc(3.3*u, 2.4*u, 2, 0, 2*Math.PI);
+            ctxB.fillStyle = 'black';
+            ctxB.fill();
+        }
+        drawChicken();
+
+        // --- FIGURE C : LE DAMIER ---
+        const canvasC = document.getElementById('canvasC');
+        const ctxC = canvasC.getContext('2d');
+
+        function drawCheckerboard() {
+            const size = 40; 
+            const rows = 10;
+            const cols = 10;
+            ctxC.fillStyle = 'black';
+            ctxC.fillRect(0, 0, canvasC.width, canvasC.height);
+            ctxC.fillStyle = 'white';
+            for (let y = 0; y < rows; y++) {
+                for (let x = 0; x < cols; x++) {
+                    if ((x + y) % 2 !== 0) {
+                        ctxC.fillRect(x * size, y * size, size, size); // 
+                    }
+                }
+            }
+            ctxC.strokeRect(0, 0, cols * size, rows * size);
+        }
+        drawCheckerboard();
+
+        // --- FIGURE D : PAC-MAN ---
+        const canvasD = document.getElementById('canvasD');
+        const ctxD = canvasD.getContext('2d');
+
+        function drawPacman() {
+            // Fond noir
+            ctxD.fillStyle = 'black';
+            ctxD.fillRect(0, 0, canvasD.width, canvasD.height);
+
+            const centerX = 80;
+            const centerY = 100;
+            const radius = 60;
+
+            // Pac-Man (Arc jaune)
+            ctxD.beginPath();
+            // Arc partiel pour la bouche ouverte (0.2 PI à 1.8 PI)
+            ctxD.arc(centerX, centerY, radius, 0.2 * Math.PI, 1.8 * Math.PI); // 
+            ctxD.lineTo(centerX, centerY); // Retour au centre pour fermer la bouche
+            ctxD.fillStyle = '#FFD700'; // Jaune or "CSS name" [cite: 3001]
+            ctxD.fill();
+
+            // L'œil (Cercle noir)
+            ctxD.beginPath();
+            ctxD.arc(centerX + 10, centerY - 30, 8, 0, 2 * Math.PI);
+            ctxD.fillStyle = 'black';
+            ctxD.fill();
+            // Reflet blanc dans l'œil
+            ctxD.beginPath();
+            ctxD.arc(centerX + 12, centerY - 32, 3, 0, 2 * Math.PI);
+            ctxD.fillStyle = 'white';
+            ctxD.fill();
+
+            // Les points à manger
+            ctxD.fillStyle = 'white';
+            ctxD.beginPath();
+            ctxD.arc(centerX + 80, centerY, 10, 0, 2 * Math.PI);
+            ctxD.fill();
+            ctxD.beginPath();
+            ctxD.arc(centerX + 130, centerY, 10, 0, 2 * Math.PI);
+            ctxD.fill();
+        }
+        drawPacman();
+
+    </script>
+</body>
+</html>

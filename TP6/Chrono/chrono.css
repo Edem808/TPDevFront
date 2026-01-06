@@ -1,0 +1,37 @@
+body {
+	margin : 0;
+	text-align : center;
+}
+
+#conteneur {
+	display : flex;
+	justify-content : space-around;
+	margin-top : 50px;
+}
+
+.affichage {
+	width : 1.5em;
+	height : 1.4em;
+	padding : 0.5em;
+	margin-left : auto;
+	margin-right : auto;
+	margin-top : 50px;
+	margin-bottom : 50px;
+	font-size : 5em;
+	text-align : center;
+	border : solid 1px orange;
+	background-color : yellow;
+	border-radius : 50%;
+}
+
+pre {
+	display : inline;
+}
+
+#chrono3 {
+	margin-top : 50px;
+}
+
+button {
+	width : 100px;
+}
