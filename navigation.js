@@ -60,7 +60,15 @@
         {
             titre: "TP 7",
             exercices: [
-                { titre: "Exercice 1", lien: "TP7/Exercice1/index.html" }
+                { titre: "Exercice 3", lien: "TP7/Exercice3/exercice3.html" },
+                { titre: "Exercice 4", lien: "TP7/Exercice4/exercice4.html" }
+            ]
+        },
+        {
+            titre: "TP 8",
+            exercices: [
+                { titre: "Exercice 1", lien: "TP8/Exercice1/exercice1.html" },
+                { titre: "Exercice 4", lien: "TP8/Exercice4/exercice4.html" }
             ]
         }
     ];
@@ -170,6 +178,23 @@
         .fleche {
             font-size: 10px;
             margin-left: 10px;
+        }
+
+        /* Protection contre les styles globaux des TPs (ex: TP4) */
+        .conteneur-nav-flottant a,
+        .menu-lien {
+            background-image: none !important;
+            padding-left: 20px !important; /* Force le padding du menu */
+            min-height: auto !important;
+        }
+
+        .conteneur-nav-flottant a::before,
+        .conteneur-nav-flottant a::after,
+        .menu-lien::before,
+        .menu-lien::after {
+            content: none !important;
+            display: none !important;
+            background: none !important;
         }
     `;
 

@@ -1,0 +1,356 @@
+/* Global Styles */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    gap: 30px;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+/* Container Cards */
+.container,
+.grid-container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    margin: 0;
+    transition: transform 0.2s;
+}
+
+.container:hover,
+.grid-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* 1. DOTS ANIMATION */
+.dot {
+    width: 15px;
+    height: 15px;
+    background-color: #333;
+    border-radius: 50%;
+    margin: 0 8px;
+    animation-name: animPoints;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+.d1 {
+    animation-delay: 0s;
+}
+
+.d2 {
+    animation-delay: 0.3s;
+}
+
+.d3 {
+    animation-delay: 0.6s;
+}
+
+@keyframes animPoints {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.7);
+    }
+}
+
+/* 2. BARS ANIMATION */
+.bar {
+    width: 10px;
+    height: 20px;
+    background-color: #ff4757;
+    margin: 0 3px;
+    border-radius: 2px;
+    animation: animVague 1s infinite alternate;
+}
+
+.b1 {
+    animation-delay: 0s;
+}
+
+.b2 {
+    animation-delay: 0.2s;
+}
+
+.b3 {
+    animation-delay: 0.4s;
+}
+
+.b4 {
+    animation-delay: 0.6s;
+}
+
+.b5 {
+    animation-delay: 0.8s;
+}
+
+.b6 {
+    animation-delay: 1s;
+}
+
+.b7 {
+    animation-delay: 1.2s;
+}
+
+@keyframes animVague {
+    from {
+        height: 20px;
+    }
+
+    to {
+        height: 60px;
+    }
+}
+
+/* 3. SPINNER ANIMATION */
+.spin-img {
+    width: 80px;
+    height: 80px;
+    animation: animTourne 2s linear infinite;
+}
+
+@keyframes animTourne {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(1turn);
+    }
+}
+
+/* 4. TEXT SCENARIO */
+.text-scenario {
+    height: 50px;
+    font-size: 20px;
+    white-space: nowrap;
+    background-color: #2ed573;
+    border-radius: 25px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    animation: animScenario 8s forwards infinite;
+}
+
+.text-content {
+    padding: 0 20px;
+}
+
+@keyframes animScenario {
+    0% {
+        width: 0;
+        background-color: #2ed573;
+        transform: translateX(0);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    40% {
+        width: 250px;
+        background-color: #2ed573;
+    }
+
+    50% {
+        background-color: #ff4757;
+        transform: translateX(0);
+    }
+
+    55% {
+        transform: translateX(-5px);
+    }
+
+    60% {
+        transform: translateX(5px);
+    }
+
+    65% {
+        transform: translateX(-5px);
+    }
+
+    70% {
+        transform: translateX(5px);
+    }
+
+    80% {
+        opacity: 1;
+        background-color: #ff4757;
+    }
+
+    100% {
+        opacity: 0;
+        width: 250px;
+        background-color: #ff4757;
+    }
+}
+
+/* 5. CHECK BUTTON */
+.btn-check {
+    width: 70px;
+    height: 70px;
+    background-color: #2ed573;
+    color: white;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    background-image: url('checked.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 0;
+    border-radius: 8px;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.btn-check:active {
+    width: 70px;
+    border-radius: 50%;
+    color: transparent;
+    background-color: white;
+    border: 2px solid #2ed573;
+    background-size: 30px;
+    transform: scale(0.9);
+}
+
+/* 6. GRID ANIMATION */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    gap: 10px;
+    padding: 30px;
+    justify-content: center;
+}
+
+.grid-item {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    margin: 0;
+    animation: animGrid 2s infinite alternate;
+}
+
+.g1 {
+    animation-delay: 0s;
+    background-color: #ff4757;
+}
+
+.g2 {
+    animation-delay: 0.5s;
+    background-color: #7bed9f;
+}
+
+.g3 {
+    animation-delay: 1s;
+    background-color: #eccc68;
+}
+
+.g4 {
+    animation-delay: 1.5s;
+    background-color: #1e90ff;
+}
+
+.g5 {
+    animation-delay: 2s;
+    background-color: #a4b0be;
+}
+
+.g6 {
+    animation-delay: 2.5s;
+    background-color: #ffa502;
+}
+
+.g7 {
+    animation-delay: 3s;
+    background-color: #ff6b81;
+}
+
+.g8 {
+    animation-delay: 3.5s;
+    background-color: #5352ed;
+}
+
+.g9 {
+    animation-delay: 4s;
+    background-color: #2ed573;
+}
+
+@keyframes animGrid {
+    from {
+        border-radius: 20%;
+        transform: scale(1);
+    }
+
+    to {
+        border-radius: 50%;
+        transform: scale(0.8);
+    }
+}
+
+/* 7. WAVE TEXT */
+.text-wave {
+    font-size: 24px;
+    font-weight: bold;
+    color: #3742fa;
+}
+
+.text-wave span {
+    display: inline-block;
+    margin: 0 2px;
+    animation: animLettre 1s infinite alternate;
+}
+
+.text-wave span:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.text-wave span:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.text-wave span:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+.text-wave span:nth-child(4) {
+    animation-delay: 0.3s;
+}
+
+.text-wave span:nth-child(5) {
+    animation-delay: 0.4s;
+}
+
+@keyframes animLettre {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-15px);
+    }
+}

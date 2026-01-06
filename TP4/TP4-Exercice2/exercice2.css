@@ -13,17 +13,17 @@ h1 {
     margin-bottom: 30px;
 }
 
-ul {
+#telechargement {
     list-style-type: none;
     width: 45%;
 }
 
-li {
+#telechargement li {
     border-bottom: 2px solid black;
     padding: 15px 0;
 }
 
-a {
+#telechargement a {
     color: #8b0000;
     display: flex;
     align-items: center;
@@ -34,11 +34,11 @@ a {
 
 }
 
-a::before {
+#telechargement a::before {
     content: attr(href);
 }
 
-a::after {
+#telechargement a::after {
     content: " (    ) ";
     white-space: pre;
     width: auto;
@@ -47,46 +47,46 @@ a::after {
     background-repeat: no-repeat;
 }
 
-a[hreflang="fr"]::after {
+#telechargement a[hreflang="fr"]::after {
     background-image: url('/TP4/TP4-Exercice2/icones/fr.jpg');
 }
 
-a[hreflang="en"]::after {
+#telechargement a[hreflang="en"]::after {
     background-image: url('/TP4/TP4-Exercice2/icones/en.jpg');
 }
 
-a[href$=".pdf"] {
+#telechargement a[href$=".pdf"] {
     background-image: url('/TP4/TP4-Exercice2/icones/pdf.png');
 }
 
-a[href$=".doc"] {
+#telechargement a[href$=".doc"] {
     background-image: url('/TP4/TP4-Exercice2/icones/doc.png');
 }
 
-a[href$=".xls"] {
+#telechargement a[href$=".xls"] {
     background-image: url('/TP4/TP4-Exercice2/icones/xls.png');
 }
 
-a[href$=".png"] {
+#telechargement a[href$=".png"] {
     background-image: url('/TP4/TP4-Exercice2/icones/png.png');
 }
 
-a[href$=".rtf"] {
+#telechargement a[href$=".rtf"] {
     background-image: url('/TP4/TP4-Exercice2/icones/rtf.png');
 }
 
-a[href$=".zip"] {
+#telechargement a[href$=".zip"] {
     background-image: url('/TP4/TP4-Exercice2/icones/zip.png');
 }
 
-a[href$=".svg"] {
+#telechargement a[href$=".svg"] {
     background-image: url('/TP4/TP4-Exercice2/icones/svg.png');
 }
 
-a[href$=".ods"] {
+#telechargement a[href$=".ods"] {
     background-image: url('/TP4/TP4-Exercice2/icones/ods.png');
 }
 
-a[href$=".ppt"] {
+#telechargement a[href$=".ppt"] {
     background-image: url('/TP4/TP4-Exercice2/icones/ppt.png');
 }

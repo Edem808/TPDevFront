@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice 4 - Pipette Couleur</title>
+    <link rel="stylesheet" href="exercice4.css">
+</head>
+
+<body>
+
+    <h1>Pipette de couleur</h1>
+
+    <div class="conteneur-principal">
+        <div class="conteneur-image">
+            <img src="image.png" alt="Image source" id="monImage">
+            <canvas id="monCanvas" style="display:none;"></canvas>
+        </div>
+
+        <div class="panneau-info">
+            <div id="boiteCouleur" class="boite-couleur"></div>
+            <div id="texteInfo" class="texte-info">
+                Cliquez sur l'image pour voir la couleur.
+            </div>
+        </div>
+    </div>
+    <script src="../../navigation.js"></script>
+    <script src="exercice4.js"></script>
+</body>
+
+</html>
